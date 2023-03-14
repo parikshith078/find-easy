@@ -1,0 +1,20 @@
+.fotter {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fotterLeft {
+  justify-content: left;
+}
+
+.docList {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+}
