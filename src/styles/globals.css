@@ -1,6 +1,14 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap");
 
+/* Golbal variables */
+
+:root {
+  --primary-color: #f1e2d1;
+  --active-color: #f2d3af;
+  --grey-color: #878787;
+}
+
 html {
   font-size: 62.5%;
 }
