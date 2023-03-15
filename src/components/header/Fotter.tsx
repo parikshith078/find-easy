@@ -4,6 +4,7 @@ import { FaLinkedin, FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
 
 const Fotter = () => {
   const logo = "/assets/logo.svg";
+  const iconSize = 20;
 
   return (
     <div className={styles.fotter}>
@@ -29,9 +30,13 @@ const Fotter = () => {
           </ul>
         </div>
         <div className={styles.fotterRight}>
-          <p>Get the latest update about Properties and Sells</p>
+          <p className={styles.actionText}>
+            Get the latest update about Properties, Sells and price drop on
+            favourites
+          </p>
           <div className={styles.emailDiv}>
             <input
+              className={styles.emailField}
               type="text"
               id="fname"
               name="fname"
@@ -41,26 +46,27 @@ const Fotter = () => {
           </div>
         </div>
       </div>
+      <hr className={styles.line} />
       <div className={styles.social}>
         <ul className={styles.docList}>
           <li>
             <a href="#">
-              <FaLinkedin />
+              <FaLinkedin size={iconSize} />
             </a>
           </li>
           <li>
             <a href="#">
-              <FaTwitter />
+              <FaTwitter size={iconSize} />
             </a>
           </li>
           <li>
             <a href="#">
-              <FaInstagram />
+              <FaInstagram size={iconSize} />
             </a>
           </li>
           <li>
             <a href="#">
-              <FaGithub />
+              <FaGithub size={iconSize} />
             </a>
           </li>
         </ul>
