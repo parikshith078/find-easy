@@ -2,6 +2,8 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/header/Fotter";
+import SearchBar from "@/components/header/SearchBar";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 export default function Home() {
   const Card = () => {
@@ -32,10 +34,45 @@ export default function Home() {
       <main>
         <div className="wrapper">
           <Header />
-          <div className="filler"></div>
+          <div className="main">
+            <div className="hero-section">
+              <div className="left-col">
+                <h1>Beyond the Sale A Lifelong Partnership</h1>
+                <p className="sub-heading">
+                  Experience stress-free home buying and selling with our
+                  professional team. Expert guidance for every step of process.
+                </p>
+                <SearchBar />
+                <SeeListingBtn />
+              </div>
+              <div className="right-col">
+                <div className="background-img">
+                  <div className="product-details"></div>
+                </div>
+              </div>
+            </div>
+            <div className="service-section">
+              <ServiceCard />
+              <ServiceCard />
+              <ServiceCard />
+            </div>
+          </div>
           <Footer />
         </div>
       </main>
     </>
   );
 }
+
+const ServiceCard = () => {
+  return <div className="service-card"></div>;
+};
+
+const SeeListingBtn = () => {
+  return (
+    <div className="see-listing-div">
+      <div className="see-listing-btn">See listing</div>
+      <HiOutlineArrowNarrowRight size="24" />
+    </div>
+  );
+};
