@@ -1,10 +1,31 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
+// import styles from "@/styles/Home.module.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/header/Fotter";
 import SearchBar from "@/components/header/SearchBar";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { MdLocationPin } from "react-icons/md";
+import Image from "next/image";
+
+const SERVICES_INFO: service[] = [
+  {
+    discription:
+      "Maximise your return. sell your property with confidence with us.",
+    serviceName: "Sell Property",
+    src: "/assets/sell.svg",
+  },
+  {
+    discription:
+      "Find your dream home, secure your financial future with property ownership with us. ",
+    serviceName: "Buy Property",
+    src: "/assets/buy.svg",
+  },
+  {
+    discription: "Reach your target audience with ease Advertise with us.",
+    serviceName: "Advertise",
+    src: "/assets/advertise.svg",
+  },
+];
 
 export default function Home() {
   return (
@@ -47,9 +68,9 @@ export default function Home() {
               </div>
             </div>
             <div className="service-section">
-              <ServiceCard />
-              <ServiceCard />
-              <ServiceCard />
+              {SERVICES_INFO.map((service, id) => (
+                <ServiceCard {...service} key={id} />
+              ))}
             </div>
           </div>
           <Footer />
@@ -59,8 +80,20 @@ export default function Home() {
   );
 }
 
-const ServiceCard = () => {
-  return <div className="service-card"></div>;
+const ServiceCard = ({ discription, src, serviceName }: service) => {
+  return (
+    <div className="service-card">
+      <Image
+        src={src}
+        alt="Service img"
+        className="service-img"
+        width={250}
+        height={225}
+      />
+      <p>{discription}</p>
+      <div className="service-btn">{serviceName}</div>
+    </div>
+  );
 };
 
 const SeeListingBtn = () => {
@@ -70,4 +103,10 @@ const SeeListingBtn = () => {
       <HiOutlineArrowNarrowRight size="24" />
     </div>
   );
+};
+
+type service = {
+  src: string;
+  discription: string;
+  serviceName: string;
 };
