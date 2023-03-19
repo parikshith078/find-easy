@@ -4,24 +4,9 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/header/Fotter";
 import SearchBar from "@/components/header/SearchBar";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import { MdLocationPin } from "react-icons/md";
 
 export default function Home() {
-  const Card = () => {
-    return (
-      <div className={styles.card}>
-        <div className={styles.cardInfo}>
-          <div className={styles.cardTitleSec}>
-            <a href="#" className={styles.cardTitle}>
-              Fauxica Sport
-            </a>
-            <p className={styles.cardSubtitle}>Running shoe</p>
-          </div>
-          <p className={styles.price}>₹ 50</p>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <>
       <Head>
@@ -46,8 +31,18 @@ export default function Home() {
                 <SeeListingBtn />
               </div>
               <div className="right-col">
-                <div className="background-img">
-                  <div className="product-details"></div>
+                <div className="card-bg">
+                  <div className="product-details">
+                    <MdLocationPin size="32" />
+                    <div>
+                      <p className="card-title">
+                        JP Nagar, Bengaluru Karnataka
+                      </p>
+                      <p className="card-dis">
+                        2BHK Starting from <strong>80L</strong>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
