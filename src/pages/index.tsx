@@ -1,8 +1,8 @@
 import Head from "next/head";
 // import styles from "@/styles/Home.module.css";
-import Header from "@/components/header/Header";
-import Footer from "@/components/header/Fotter";
-import SearchBar from "@/components/header/SearchBar";
+import Header from "@/components/Header";
+import Footer from "@/components/Fotter";
+import SearchBar from "@/components/SearchBar";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { MdLocationPin } from "react-icons/md";
 import Image from "next/image";
