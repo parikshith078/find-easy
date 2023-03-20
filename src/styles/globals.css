@@ -51,6 +51,21 @@ nav ul li a {
   font-size: 1.6rem;
 }
 
+nav ul li a:before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 1px;
+  border-bottom: 2px solid var(--grey-color);
+  bottom: -6px;
+  transition: width 0.3s;
+}
+
+nav ul li a.active::before {
+  width: 35%;
+  border-bottom: 2px solid black;
+}
+
 .filler {
   height: 70vh;
   width: 100%;
@@ -102,6 +117,7 @@ nav ul li a {
 }
 
 .search-btn {
+  cursor: pointer;
   display: grid;
   place-items: center;
   border-radius: 0.3rem;
@@ -119,11 +135,14 @@ nav ul li a {
 }
 
 .see-listing-div {
+  cursor: pointer;
   font-size: 1.8em;
   align-items: center;
   margin-top: 3.2rem;
   gap: 0.5rem;
   display: flex;
+  transition: gap 0.3s;
+  max-width: 15rem;
 }
 
 /* Hero card part */
@@ -139,9 +158,11 @@ nav ul li a {
   background-attachment: fixed;
   background-size: 100%;
   padding: 1.8rem;
+  transition: background-size 0.8s;
 }
 
 .product-details {
+  cursor: pointer;
   padding: 1.7rem;
   border-radius: 0.4rem;
   width: 100%;
@@ -149,6 +170,7 @@ nav ul li a {
   gap: 1rem;
   background-color: #ffffff;
   font-size: 1.6em;
+  transition: transform 0.8s;
 }
 
 .card-title {
@@ -180,6 +202,7 @@ nav ul li a {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.5s;
   /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
 }
 /* .service-img {
@@ -196,7 +219,37 @@ nav ul li a {
   border: 1px solid var(--grey-color);
   border-radius: 0.3rem;
   font-weight: 700;
+  cursor: pointer;
+  transition: scale 0.5s;
 }
 
-.oij {
+/* Micro intractions */
+
+nav ul li a:hover::before {
+  width: 35%;
+}
+
+.see-listing-div:hover {
+  gap: 1rem;
+  text-decoration: underline;
+}
+
+.card-bg:hover {
+  background-size: 120%;
+}
+
+.card-bg:hover .product-details {
+  transform: translateY(-1.5rem);
+}
+
+.service-card:hover {
+  transform: translateY(-1rem);
+}
+
+.service-card:hover .service-btn {
+  scale: 1.1;
+}
+
+.service-btn:hover {
+  background-color: var(--primary-color);
 }
