@@ -1,0 +1,80 @@
+
+
+.loginBtn {
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    border-radius: 0.3rem;
+    background-color: var(--primary-color);
+  }
+  
+  .loginBtn:hover {
+    background-color: var(--active-color);
+  }
+
+  .centerDiv {
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main, .loginForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main {
+    position: absolute;
+    margin: o auto;
+    width: 40rem;
+    padding: 1rem;
+    gap: 2.5rem;
+    font-size: 1.5em;
+  }
+
+  .loginForm {
+    gap: 1rem;
+  }
+
+  .inputField {
+    height: 3.5rem;
+    padding-left: 1rem;
+  }
+
+  .googleBtn {
+    display: flex;
+    justify-content: space-evenly;
+	background-color: #ffffff;
+	color: black;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+	font-size: 16px;
+	font-weight: 500;
+	padding: 10px 20px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: all 0.2s ease;
+	cursor: pointer;
+  }
+  
+  .googleBtn:hover {
+	background-color: #357ae8;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  }
+  .googleBtn :active {
+	background-color: #00FF00;
+  }
+	
+  .googleBtn img {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+  }
+
+  
