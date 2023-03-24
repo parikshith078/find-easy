@@ -17,6 +17,22 @@ html {
 body {
   margin: 0;
   font-family: "Poppins";
+  /* For nav bar */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* For dimming body when menu bar enters */
+
+.dimmed {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  transition: background-color 0.3s;
 }
 
 .wrapper {
@@ -113,6 +129,7 @@ nav ul li a.active::before {
 }
 
 .search-box {
+  display: block;
   border-radius: 0.6rem;
   border: 1px solid var(--grey-color);
   height: 6rem;
@@ -120,6 +137,7 @@ nav ul li a.active::before {
   font-size: 1.6em;
   font-weight: 200;
   padding-left: 1.4rem;
+  z-index: -999;
 }
 
 .search-btn {

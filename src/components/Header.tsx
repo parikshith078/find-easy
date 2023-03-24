@@ -7,22 +7,23 @@ const Header = () => {
 
   const [open, setOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setOpen(!open);
+    document.body.classList.toggle("dimmed");
+  };
+
   return (
-    <header>
-      <a href="#">
-        <Image alt="Find Easy logo" src={logo} width={57} height={60} />
-      </a>
-      <NavBar isOpen={open} />
-      <div
-        className="ham-btn"
-        onClick={() => {
-          setOpen(!open);
-          console.log(open);
-        }}
-      >
-        {open ? <CgCloseR size="32" /> : <CgMenu size="32" />}
-      </div>
-    </header>
+    <div className="nav-bar">
+      <header>
+        <a href="#">
+          <Image alt="Find Easy logo" src={logo} width={57} height={60} />
+        </a>
+        <NavBar isOpen={open} />
+        <div className="ham-btn" onClick={() => toggleMenu()}>
+          {open ? <CgCloseR size="32" /> : <CgMenu size="32" />}
+        </div>
+      </header>
+    </div>
   );
 };
 export default Header;
