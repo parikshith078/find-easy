@@ -3,25 +3,21 @@ import { FaUserTie } from "react-icons/fa";
 import { CgMenu, CgCloseR } from "react-icons/cg";
 import { FC, useState } from "react";
 const Header = () => {
-  const logo = "/assets/logo.svg";
+  const logo = "/assets/logo.png";
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const toggleMenu = () => {
     setOpen(!open);
-    document.body.classList.toggle("dimmed");
   };
 
   return (
-    <div className="nav-bar">
-      <header>
+    <div className="">
+      <header className="">
         <a href="#">
-          <Image alt="Find Easy logo" src={logo} width={57} height={60} />
+          <Image alt="Find Easy logo" src={logo} width={70} height={70} />
         </a>
-        <NavBar isOpen={open} />
-        <div className="ham-btn" onClick={() => toggleMenu()}>
-          {open ? <CgCloseR size="32" /> : <CgMenu size="32" />}
-        </div>
+        <NavBar toggleMenu={toggleMenu} isOpen={open} />
       </header>
     </div>
   );
@@ -30,13 +26,14 @@ export default Header;
 
 interface navBar {
   isOpen: boolean;
+  toggleMenu: any;
 }
 
-const NavBar: FC<navBar> = ({ isOpen }) => {
-  const className = `menu ${isOpen ? "open" : ""}`;
+const NavBar: FC<navBar> = ({ isOpen, toggleMenu }) => {
+  // const className = `menu ${isOpen ? "open" : ""}`;
   return (
-    <nav>
-      <ul className={className}>
+    <nav className="">
+      <ul className="">
         <li>
           <a href="#" className="active">
             Home
@@ -57,6 +54,13 @@ const NavBar: FC<navBar> = ({ isOpen }) => {
           </a>
         </li>
       </ul>
+      <div  onClick={() => toggleMenu()}>
+        {isOpen ? (
+          <CgCloseR  size="32" />
+        ) : (
+          <CgMenu size="32" />
+        )}
+      </div>
     </nav>
   );
 };
