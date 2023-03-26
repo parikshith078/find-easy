@@ -93,11 +93,18 @@ const NavList: FC<navList> = ({ active, onClick, navStyle, liStyle }) => {
           <li
             key={link.id}
             className={`${
-              active == link.title ? "text-black" : "text-tertiary"
-            } ${liStyle} `}
+              active == link.title ? "text-black " : "text-tertiary"
+            } ${liStyle}`}
             onClick={() => onClick(link.title)}
           >
-            <a href={`#${link.id}`}>{link.title}</a>
+            <a
+              className={`  ${
+                active == link.title ? " before:w-[30%]" : "before:w-0"
+              }  relative  before:absolute before:h-[2px] before:bg-black before:bottom-[-6px] before:left-0 hover:before:w-[30%] before:transition-width before:ease-in before:delay-300`}
+              href={`#${link.id}`}
+            >
+              {link.title}
+            </a>
           </li>
         );
       })}

@@ -15,6 +15,9 @@ module.exports = {
         secondary: "#f2d3af",
         tertiary: "#878787",
       },
+      transitionProperty: {
+        width: "width",
+      },
     },
   },
   plugins: [],
