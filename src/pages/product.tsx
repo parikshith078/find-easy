@@ -2,11 +2,11 @@ import Header from "@/components/Header";
 import Fotter from "@/components/Fotter";
 import styles from "@/styles/Product.module.css";
 import { MdIosShare } from "react-icons/md";
-import { AiOutlineHeart } from "react-icons/Ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import Image from "next/image";
 import { FC } from "react";
 
-function product() {
+const Product: FC = () => {
   return (
     <div className="wrapper">
       <Header />
@@ -77,6 +77,6 @@ function product() {
       <Fotter />
     </div>
   );
-}
+};
 
-export default product;
+export default Product;
