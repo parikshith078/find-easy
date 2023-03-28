@@ -70,7 +70,7 @@ function product() {
             available for sale. Grab this 3 BHK property for sale in one of
             Bengaluru's top location, Attibele. The property price of this unit
             is Rs 1.4 Cr. Monthly maintenance costs Rs 2000. The built-up area
-            is 2220 Square feet. There are 3 bedrooms and 3 bathroom.{" "}
+            is 2220 Square feet. There are 3 bedrooms and 3 bathroom.
           </p>
         </div>
       </div>
