@@ -1,5 +1,5 @@
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;300;400;700&display=swap");
 
 /* Golbal variables */
 
@@ -7,6 +7,7 @@
   --primary-color: #f1e2d1;
   --active-color: #f2d3af;
   --grey-color: #878787;
+  --speed: 500ms;
 }
 
 html {
@@ -16,6 +17,22 @@ html {
 body {
   margin: 0;
   font-family: "Poppins";
+  /* For nav bar */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* For dimming body when menu bar enters */
+
+.dimmed {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  transition: background-color 0.3s;
 }
 
 .wrapper {
@@ -40,6 +57,11 @@ ul {
   margin: 0;
 }
 
+/* Ham icosn */
+.ham-btn {
+  display: none;
+}
+
 ul li a {
   text-decoration: none;
   color: black;
@@ -51,9 +73,275 @@ nav ul li a {
   font-size: 1.6rem;
 }
 
+nav ul li a:before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 1px;
+  border-bottom: 2px solid var(--grey-color);
+  bottom: -6px;
+  transition: width 0.3s;
+}
+
+nav ul li a.active::before {
+  width: 35%;
+  border-bottom: 2px solid black;
+}
+
 .filler {
   height: 70vh;
   width: 100%;
 }
 
-/* Footer */
+/* Hero section */
+.left-col h1 {
+  font-size: 5.2em;
+  font-weight: 400;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  line-height: 130%;
+  letter-spacing: 1px;
+}
+
+.hero-section {
+  display: flex;
+  gap: 7rem;
+  margin: 5rem 0;
+}
+
+.left-col {
+  width: 45%;
+}
+.right-col {
+  flex-grow: 1;
+}
+
+.sub-heading {
+  font-size: 1.8em;
+  margin-top: 3.2rem;
+  max-width: 90%;
+  font-weight: 200;
+}
+
+.search-div {
+  position: relative;
+  margin-top: 6rem;
+}
+
+.search-box {
+  display: block;
+  border-radius: 0.6rem;
+  border: 1px solid var(--grey-color);
+  height: 6rem;
+  width: 90%;
+  font-size: 1.6em;
+  font-weight: 200;
+  padding-left: 1.4rem;
+  z-index: -999;
+}
+
+.search-btn {
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  border-radius: 0.3rem;
+  background-color: var(--primary-color);
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 87%;
+  transform: translate(-50%, -50%);
+}
+
+.search-btn:hover {
+  background-color: var(--active-color);
+}
+
+.see-listing-div {
+  cursor: pointer;
+  font-size: 1.8em;
+  align-items: center;
+  margin-top: 3.2rem;
+  gap: 0.5rem;
+  display: flex;
+  transition: gap 0.3s;
+  max-width: 15rem;
+}
+
+/* Hero card part */
+.card-bg {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 0.8rem;
+  height: 45rem;
+  margin-top: 1.5rem;
+  background-image: url("/assets/house.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  padding: 1.8rem;
+  transition: background-size 0.8s;
+}
+
+.product-details {
+  cursor: pointer;
+  padding: 1.7rem;
+  border-radius: 0.4rem;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  background-color: #ffffff;
+  font-size: 1.6em;
+  transition: transform 0.8s;
+}
+
+.card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.card-dis {
+  margin: 0;
+  font-weight: 300;
+}
+
+.service-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 10rem 0;
+  gap: 1rem;
+}
+
+.service-card {
+  font-size: 1.6em;
+  font-weight: 300;
+  width: 100%;
+  padding: 4.5rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.5s;
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+}
+/* .service-img {
+  width: 100%;
+  height: 100%;
+} */
+
+.service-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15.4rem;
+  height: 5.2rem;
+  border: 1px solid var(--grey-color);
+  border-radius: 0.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: scale 0.5s;
+}
+
+/* Micro intractions */
+
+nav ul li a:hover::before {
+  width: 35%;
+}
+
+.see-listing-div:hover {
+  gap: 1rem;
+  text-decoration: underline;
+}
+
+.card-bg:hover {
+  background-size: 120%;
+}
+
+.card-bg:hover .product-details {
+  transform: translateY(-1.5rem);
+}
+
+.service-card:hover {
+  transform: translateY(-1rem);
+}
+
+.service-card:hover .service-btn {
+  scale: 1.1;
+}
+
+.service-btn:hover {
+  background-color: var(--primary-color);
+}
+
+/* Menu  */
+
+.menu.open {
+  transform: translateX(0);
+}
+
+/* Landing page Responsiveness */
+
+@media (max-width: 500px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .menu {
+    position: absolute;
+    flex-direction: column;
+    padding-top: 6rem;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .right-col {
+    transform: translateX(100%);
+  }
+
+  .left-col {
+    width: 100%;
+  }
+
+  .right-col {
+    display: none;
+  }
+
+  .service-section {
+    flex-direction: column;
+    padding: 1rem;
+    margin: 3rem 0;
+  }
+  .service-card {
+    width: 80%;
+  }
+
+  .see-listing-div {
+    scale: 1.2;
+    transform: translate(10%, 0%);
+  }
+
+  nav ul li a {
+    font-size: 2em;
+  }
+
+  .ham-btn {
+    display: block;
+    cursor: pointer;
+    z-index: 3;
+  }
+  header {
+    padding: 1rem 1rem 0 1rem;
+  }
+}
