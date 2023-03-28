@@ -13,19 +13,28 @@ function product() {
       <div className={styles.main}>
         <div>
           <div className={styles.bigimg}>
-            <img src="https://picsum.photos/607/450" alt="Home pic " />
+            <Image
+              src="/assets/home.jpg"
+              alt="My Image"
+              width={607}
+              height={450}
+            />
           </div>
 
           <div className={styles.img}>
-            <img
+            <Image
               className={styles.smallimg}
-              src="https://picsum.photos/302/248"
+              src="/assets/kit.jpg"
               alt="Other pic"
+              width={302}
+              height={248}
             />
-            <img
+            <Image
               className={styles.smallimg1}
-              src="https://picsum.photos/302/248"
+              src="/assets/liv.jpg"
               alt="Other pic"
+              width={302}
+              height={248}
             />
           </div>
         </div>
