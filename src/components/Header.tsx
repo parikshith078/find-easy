@@ -2,6 +2,8 @@ import Image from "next/image";
 import { FaUserTie } from "react-icons/fa";
 import { CgMenu, CgCloseR } from "react-icons/cg";
 import { FC, useState } from "react";
+import { styles } from "@/tailwindStyles";
+
 const Header = () => {
   return (
     <div className="">
@@ -15,7 +17,7 @@ const Nav: FC = () => {
   const logo = "/assets/logo.png";
   const close = "/assets/close.svg";
   const menu = "/assest/menu.svg";
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("home");
   const [toggle, setToggle] = useState(false);
 
   const handelNavClick = (title: string) => {
@@ -29,7 +31,7 @@ const Nav: FC = () => {
     <nav
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-white `}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-between items-center max-w-7xl m-auto">
         <a
           className="flex items-center gap-2"
           onClick={() => {
@@ -63,7 +65,7 @@ const Nav: FC = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient bg-primary absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
+            } p-6 black-gradient bg-white shadow-xl absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
           >
             <NavList
               liStyle="font-poppins font-medium cursor-pointer text-[16px] "
@@ -93,13 +95,13 @@ const NavList: FC<navList> = ({ active, onClick, navStyle, liStyle }) => {
           <li
             key={link.id}
             className={`${
-              active == link.title ? "text-black " : "text-tertiary"
+              active == link.id ? "text-black " : "text-tertiary"
             } ${liStyle}`}
-            onClick={() => onClick(link.title)}
+            onClick={() => onClick(link.id)}
           >
             <a
               className={`  ${
-                active == link.title ? " before:w-[30%]" : "before:w-0"
+                active == link.id ? " before:w-[30%]" : "before:w-0"
               }  relative  before:absolute before:h-[2px] before:bg-black before:bottom-[-6px] before:left-0 hover:before:w-[30%] before:transition-width before:ease-in before:delay-300`}
               href={`#${link.id}`}
             >
@@ -125,21 +127,8 @@ const navLinks = [
     id: "contact",
     title: "Contact",
   },
+  {
+    id: "user",
+    title: <FaUserTie />,
+  },
 ];
-
-const styles = {
-  paddingX: "sm:px-16 px-6",
-  paddingY: "sm:py-16 py-6",
-  padding: "sm:px-16 px-6 sm:py-16 py-10",
-
-  heroHeadText:
-    "font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2",
-  heroSubText:
-    "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]",
-
-  sectionHeadText:
-    "text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
-  sectionSubText:
-    "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
-  navIcon: "object-contain w-[28px] h-[28px] cursor-pointer",
-};

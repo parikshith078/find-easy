@@ -14,6 +14,10 @@
   --speed: 500ms;
 }
 
+.playfair {
+  font-family: "Playfair Display", serif;
+}
+
 html {
   /* font-size: 62.5%; */
 }
@@ -27,3 +31,7 @@ body {
 }
 
 /* For dimming body when menu bar enters */
+
+.shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
