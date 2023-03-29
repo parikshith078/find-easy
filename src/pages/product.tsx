@@ -74,6 +74,16 @@ const Product: FC = () => {
           </p>
         </div>
       </div>
+      <div className={styles.TextDiv}>
+        <input
+          className={styles.TextField}
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Text..."
+        ></input>
+        <div className={styles.subBtn2}>Submit</div>
+      </div>
       <Fotter />
     </div>
   );

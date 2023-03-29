@@ -178,4 +178,43 @@
   .main {
     display: flex;
     gap: 5rem;
+    height: 780px;
+    padding-bottom: 150px;
   } 
+
+  .TextDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: baseline;
+
+    position: absolute;
+    top: 900px;
+    left: 950px;
+    right: auto;
+    gap: 2rem;
+    margin-top: 0.4rem;
+  }
+  
+  .TextField {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    width: 28.4rem;
+    height: 6.4rem;
+  }
+
+  .subBtn2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8.9rem;
+    height: 4rem;
+    border-radius: 0.3rem;
+    background-color: var(--primary-color);
+  }
+  
+  .subBtn2:hover {
+    background-color: var(--active-color);
+  }
