@@ -47,6 +47,8 @@ div.card_container {
    
     object-fit: cover;
     border-radius: 1rem;
+    box-shadow: 4px 4px #b9b8b8;
+    
   }
 
 .card_style {
@@ -55,7 +57,7 @@ div.card_container {
     align-items: flex-start;
     width: 310px;
     height: 30px;
-    padding: 10px;
+
 
 
   }
@@ -64,6 +66,7 @@ div.card_container {
    display: flex;
    align-content: center;
    gap: 0.25rem; 
+   filter:contrast(100%);
   }
 
 .cards{
@@ -71,3 +74,28 @@ div.card_container {
 
   }
 
+  .main_card{
+   margin: 10px;
+  }
+
+  .card_title,.card_rating{
+    margin-top: 8px;
+    margin-bottom: 2px;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+.details{
+  height: 10px;
+  margin: 8px;
+  color: grey;
+}
+
+.price{
+  height: 10px;
+  margin: 8px;
+}
+
+.hbut{
+  background-color: aqua;
+}
