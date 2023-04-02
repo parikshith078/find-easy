@@ -6,7 +6,7 @@ const HeartButton = () =>{
     return(
         <div>
          <AiOutlineHeart
-         size={10}/>
+         size={20}/>
         </div>
     );
 };

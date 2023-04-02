@@ -2,11 +2,11 @@ import Fotter from "@/components/Fotter";
 import Header from "@/components/Header";
 import { styles as tailwindCss } from "@/tailwindStyles";
 import { FaSearch } from "react-icons/fa";
-// import Map from "@/src/components/map/Map";
-
+import Map from "@/components/map/Maps";
 import styles from "@/styles/catalouge.module.css";
 import Card from "@/components/card/Card";
-import HeartButton from "@/components/card/Heartbutton";
+import HeartButton from "@/components/card/HeartButton";
+
 // import Map from "@googlemaps/js-api-loader"
 
 const iconSize = 20;
@@ -27,8 +27,9 @@ const catalouge = () => {
               <FaSearch size={iconSize} />
             </div>
           </div>
-         <div>
-          {/* <Map /> */}
+         <div className={styles.maps}>
+          <Map 
+          />
          </div>
 
           <div className={styles.card_container}>

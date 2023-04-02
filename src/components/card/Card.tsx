@@ -2,9 +2,8 @@ import React from "react";
 import styles from "@/styles/catalouge.module.css";
 import { styles as tailwindCss } from "@/tailwindStyles";
 import { FC } from "react";
-import HeartButton from "./Heartbutton";
-//import hotel from "@/public/assets/house.jpg"
 import { AiFillStar } from "react-icons/ai";
+import HeartButton from "./HeartButton";
 const iconsize = 20;
 const Card = () => {
   return (
@@ -19,10 +18,7 @@ const Card = () => {
         <div className={styles.card_rating}>
           <AiFillStar size={iconsize} />
           <p>4.5</p>
-          {/* <div className={styles.hbut}> */}
-           {/* <HeartButton /> */}
-          {/* </div> */}
-          <button>
+          <button className={styles.hbut}>
            <HeartButton />
           </button>
         </div>
