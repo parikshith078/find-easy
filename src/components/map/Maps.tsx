@@ -29,7 +29,7 @@ import { Map, GoogleApiWrapper, IMapProps } from "google-maps-react-18-support";
 
 interface MapContainerProps extends IMapProps {
   google: any;
-  onClick: () => void;
+  // onClick: () => void;
 }
 
 const mapStyles: React.CSSProperties = {
@@ -46,7 +46,7 @@ const MapContainer: React.FC<MapContainerProps> = (props) => {
       style={mapStyles}
       initialCenter={{ lat: 37.774929, lng: -122.419416 }}
       zoom={8}
-      onClick={onClick}
+      // onClick={onClick}
     />
   );
 };
