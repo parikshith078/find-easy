@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "@/styles/catalouge.module.css";
-import { styles as tailwindCss } from "@/tailwindStyles";
-import { FC } from "react";
-import { AiFillStar } from "react-icons/ai";
 import HeartButton from "./HeartButton";
+import { AiFillStar } from "react-icons/ai";
 const iconsize = 20;
 const Card = () => {
   return (
@@ -18,10 +16,8 @@ const Card = () => {
         <div className={styles.card_rating}>
           <AiFillStar size={iconsize} />
           <p>4.5</p>
-          <button className={styles.hbut}>
-           <HeartButton />
-          </button>
-        </div>
+          <HeartButton />
+           </div>
       </div>
       <p className={styles.details}>description </p>
       <p className={styles.details}>speciality</p>

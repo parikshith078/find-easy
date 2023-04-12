@@ -11,16 +11,16 @@
     float: right;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 16px;
     overflow-x: auto;
     overflow-y: scroll;
-    width:700px;
+    width:680px;
     height:600px;
+    margin-top: 16px;
     
 }
 
 .card{
-    width: 315px;
+    width: 310px;
     height: 287px;
     margin: 10px;
     box-shadow: 2px 2px rgb(178, 182, 182);
@@ -28,13 +28,13 @@
 
     
 }
-div.card_container {
+/* div.card_container {
     background-color: #ffffff;
     width: 680px;
     height: 600px;
-    /*overflow-x: hidden;
-    overflow-y: scroll;*/
-  }
+    overflow-x: hidden;
+    overflow-y: scroll;
+} */
 .img{
     border-radius: 15px;
 }
@@ -96,6 +96,3 @@ div.card_container {
   margin: 8px;
 }
 
-/* .hbut{
-  background-color: aqua;
-} */
