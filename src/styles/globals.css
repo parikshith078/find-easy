@@ -21,6 +21,10 @@ html {
   font-family: "Playfair Display", serif;
 }
 
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
 body {
   margin: 0;
   font-family: "Poppins";
