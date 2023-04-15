@@ -42,7 +42,7 @@ const HeroCard: FC<herocard> = ({ backgroundImage }) => {
       className="flex-1 h-[440px] xs:hidden mt-5 rounded-lg bg-cover lg:flex items-end p-3 hover:pb-4 scale-100 hover:scale-105 transition-all delay-200  "
       style={cardImg}
     >
-      <div className="h-[23%]  w-full rounded-md bg-white p-3 flex items-start gap-1">
+      <div className="h-[23%]  w-full rounded-md bg-base-100 p-3 flex items-start gap-1">
         <MdLocationPin className="text-[28px] mt-[2px]" />
         <div className="flex gap-2 flex-col">
           <h3 className="playfair text-[22px] font-light ">

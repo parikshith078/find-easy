@@ -8,7 +8,8 @@ const Fotter = () => {
 
   return (
     <div
-      className={`${styles.paddingX} w-full flex flex-col items-center py-5 gap-16 bg-white mb-10 `}
+      className={`${styles.paddingX} w-full flex flex-col items-center py-5 gap-16 bg-base-100 mb-10 `}
+      id="footer"
     >
       <div className=" flex justify-between gap-14 w-full lg:flex-row md:flex-row xs:flex-col-reverse ">
         <div className=" text flex flex-col  gap-5 w-full ">
@@ -77,7 +78,11 @@ const Fotter = () => {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/parikshith078/find-easy"
+              >
                 <FaGithub size={iconSize} />
               </a>
             </li>
