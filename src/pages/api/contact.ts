@@ -68,36 +68,109 @@
 //     console.error(error);
 //   });
 
-import twilio from 'twilio';
-import sgMail from '@sendgrid/mail';
+// import twilio from 'twilio';
+// import sgMail from '@sendgrid/mail';
 
-const twilioClient = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
+// const twilioClient = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
+// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+// twilioClient.messages.create({
+//   body: 'This is a test SMS sent using Twilio!',
+//   from: '+14345776835', // Your Twilio phone number
+//   to: '+917349012319', // The recipient's phone number
+// })
+// .then(() => {
+//   console.log('SMS sent');
+// })
+// .catch((error) => {
+//   console.error(error);
+// });
+
+// const msg = {
+//   to: 'sharath.g2100@gmail.com',
+//   from: '21bcs107@iiitdwd.ac.in',
+//   subject: 'Test email',
+//   text: 'This is a test email sent using Twilio and SendGrid!',
+//   html: '<p>This is a test email sent using Twilio and SendGrid!</p>',
+// };
+
+// sgMail.send(msg)
+//   .then(() => {
+//     console.log('Email sent');
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+// import twilio from 'twilio';
+// import sgMail from '@sendgrid/mail';
+// require('dotenv').config(); // Load environment variables from .env file
+
+// const twilioClient = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
+// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+// twilioClient.messages.create({
+//   body: 'This is a test SMS sent using Twilio!',
+//   from: process.env.TWILIO_PHONE_NUMBER, // Your Twilio phone number
+//   to: process.env.RECIPIENT_PHONE_NUMBER, // The recipient's phone number
+// })
+// .then(() => {
+//   console.log('SMS sent');
+// })
+// .catch((error) => {
+//   console.error(error);
+// });
+
+// const msg = {
+//   to: process.env.TO_EMAIL_ADDRESS,
+//   from: process.env.FROM_EMAIL_ADDRESS,
+//   subject: 'Test email',
+//   text: 'This is a test email sent using Twilio and SendGrid!',
+//   html: '<p>This is a test email sent using Twilio and SendGrid!</p>',
+// };
+
+// sgMail.send(msg)
+//   .then(() => {
+//     console.log('Email sent');
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+const sgMail = require('@sendgrid/mail');
+const twilio = require('twilio');
+require('dotenv').config();
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-twilioClient.messages.create({
-  body: 'This is a test SMS sent using Twilio!',
-  from: '+14345776835', // Your Twilio phone number
-  to: '+917349012319', // The recipient's phone number
-})
-.then(() => {
-  console.log('SMS sent');
-})
-.catch((error) => {
-  console.error(error);
-});
+const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
-const msg = {
-  to: 'sharath.g2100@gmail.com',
-  from: '21bcs107@iiitdwd.ac.in',
-  subject: 'Test email',
-  text: 'This is a test email sent using Twilio and SendGrid!',
-  html: '<p>This is a test email sent using Twilio and SendGrid!</p>',
-};
+const sendEmail = (toEmail: string, subject: string, text: string) => {
+  const msg = {
+    to: toEmail,
+    from: process.env.FROM_EMAIL_ADDRESS,
+    subject: subject,
+    text: text,
+    html: `<p>${text}</p>`
+  };
 
-sgMail.send(msg)
-  .then(() => {
-    console.log('Email sent');
-  })
-  .catch((error) => {
-    console.error(error);
+  return sgMail.send(msg);
+}
+
+const sendSMS = (toNumber: string, message: string) => {
+  return twilioClient.messages.create({
+    body: message,
+    from: process.env.TWILIO_PHONE_NUMBER,
+    to: process.env.RECIPIENT_PHONE_NUMBER
+
   });
+}
+
+// Example usage
+sendEmail('recipient@example.com', 'Test Email', 'This is a test email.')
+  .then(() => console.log('Email sent.'))
+  .catch((error: any) => console.error(error));
+
+sendSMS('+1234567890', 'This is a test SMS.')
+  .then(() => console.log('SMS sent.'))
+  .catch((error: any) => console.error(error));
