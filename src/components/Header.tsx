@@ -2,61 +2,66 @@ import Image from "next/image";
 import { FaUserTie } from "react-icons/fa";
 import { CgMenu, CgCloseR } from "react-icons/cg";
 import { FC, useState } from "react";
+import { FaUserAlt } from "react-icons/fa";
+import Link from "next/link";
+import { useAuth } from "@/components/context/AuthContext";
 const Header = () => {
-  const logo = "/assets/logo.svg";
-
-  const [open, setOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setOpen(!open);
-    document.body.classList.toggle("dimmed");
-  };
-
   return (
-    <div className="nav-bar">
-      <header>
-        <a href="#">
-          <Image alt="Find Easy logo" src={logo} width={57} height={60} />
-        </a>
-        <NavBar isOpen={open} />
-        <div className="ham-btn" onClick={() => toggleMenu()}>
-          {open ? <CgCloseR size="32" /> : <CgMenu size="32" />}
-        </div>
-      </header>
+    <div className="">
+      <Nav />
     </div>
   );
 };
 export default Header;
 
-interface navBar {
-  isOpen: boolean;
-}
+const Nav: FC = () => {
+  const { currentUser, logout } = useAuth();
+  // TODO: add contact button to scroll to contact section
 
-const NavBar: FC<navBar> = ({ isOpen }) => {
-  const className = `menu ${isOpen ? "open" : ""}`;
+  const logo = "/assets/logo.png";
+
+  const handelLogout = () => {
+    logout();
+  };
+
   return (
-    <nav>
-      <ul className={className}>
+    <div className="navbar bg-base-100 px-12">
+      <div className="flex-1 pb-2 ">
+        <Link href="/" className="btn btn-ghost normal-case pb-2 text-2xl">
+          <Image alt="logo" src={logo} width={67} height={60} />
+        </Link>
+      </div>
+      <ul className="menu menu-horizontal px-1 font-medium mx-2 ">
         <li>
-          <a href="#" className="active">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#">Product</a>
-        </li>
-        <li>
-          <a href="#">Gallery</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
-        <li>
-          <a href="#">
-            <FaUserTie size="20" />
-          </a>
+          <Link href="#footer">Contact</Link>
         </li>
       </ul>
-    </nav>
+      <div className="flex-none gap-2">
+        <div className="dropdown dropdown-end">
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <FaUserAlt fontSize="24" />
+          </label>
+          <ul
+            tabIndex={0}
+            className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+          >
+            {currentUser && (
+              <li>
+                <a className="justify-between">Profile</a>
+              </li>
+            )}
+            {currentUser ? (
+              <li>
+                <p onClick={handelLogout}>Logout</p>
+              </li>
+            ) : (
+              <li>
+                <Link href="/login">Login</Link>
+              </li>
+            )}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 };
