@@ -1,10 +1,11 @@
-import React from "react";
 import styles from "@/styles/catalouge.module.css";
 import HeartButton from "./HeartButton";
 import { AiFillStar } from "react-icons/ai";
+import React, { useState } from "react";
 const iconsize = 20;
 const Card = () => {
-  return (
+  
+   return (
     <div className={styles.main_card}>
       <img
         src="/assets/house.jpg"
@@ -14,9 +15,13 @@ const Card = () => {
       <div className={styles.card_style}>
         <h3 className={styles.card_title}>place</h3>
         <div className={styles.card_rating}>
+          <button>
           <AiFillStar size={iconsize} />
+          </button>
           <p>4.5</p>
-          <HeartButton />
+          <button>
+          <HeartButton listingid={""} />
+          </button>
            </div>
       </div>
       <p className={styles.details}>description </p>

@@ -24,4 +24,24 @@
     margin-left: 37%;
     display: flex;
     margin-top: 10px;
+    cursor: default;
+}
+
+.property_upload{
+ /* width: 680px;
+ height: 700px;
+ margin-top: 20px;
+ border-radius: 15px;
+ border: solid; */
+ width: 700px;
+ height: 700px;
+ float: left;
+ margin-top: 20px;
+}
+
+.prop{
+  margin-left: 10px;
+  font-size: large;
+  overflow-x: auto;
+  overflow-y: scroll;
 }

@@ -25,7 +25,7 @@
 // })(MapContainer)
 //
 import React from "react";
-import { Map, GoogleApiWrapper, IMapProps } from "google-maps-react-18-support";
+import { Map, GoogleApiWrapper, IMapProps ,Marker} from "google-maps-react-18-support";
 
 interface MapContainerProps extends IMapProps {
   google: any;

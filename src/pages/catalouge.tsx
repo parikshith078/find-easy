@@ -5,7 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import Map from "@/components/map/Maps";
 import styles from "@/styles/catalouge.module.css";
 import Card from "@/components/card/Card";
-import { BiChevronDown } from "react-icons/bi";
+// import { BiChevronDown } from "react-icons/bi";
 import React from "react";
 import Select from "react-select";
 
@@ -40,6 +40,10 @@ const catalouge = () => {
           </div>
 
           <div className={styles.card_container}>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
             <Card />
             <Card />
             <Card />
