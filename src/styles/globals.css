@@ -6,6 +6,9 @@
 @tailwind utilities;
 
 /* Golbal variables */
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --primary-color: #f1e2d1;
@@ -16,6 +19,10 @@
 
 .playfair {
   font-family: "Playfair Display", serif;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
 }
 
 body {
