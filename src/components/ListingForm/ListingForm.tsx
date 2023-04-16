@@ -4,11 +4,11 @@ import { useState, ChangeEvent, FormEvent,MouseEventHandler } from 'react';
 
 
 
-const icon = 150;
+const icon = 130;
 const editicon = 20;
 
 
-const ListingForm = () => {
+const ListingForm = (props) => {
 
   interface Profile {
     name: string;
@@ -16,7 +16,7 @@ const ListingForm = () => {
     email: string;
     address: string;
     about: string;
-  }
+  };
   
   const [profile, setProfile] = useState<Profile>({
     name: "",
@@ -38,6 +38,7 @@ const ListingForm = () => {
   }
   
   const submitProfile: MouseEventHandler<HTMLButtonElement> = (event) => {
+    props.onAdd(profile)
     event.preventDefault();
   };
   
@@ -49,9 +50,12 @@ const ListingForm = () => {
             <div className={styles.headline}>
               <h1 className="font-extrabold text-2xl"> PROFILE : </h1>
             </div>
-            <button className={styles.profile_pic}>
-              <CgProfile size={icon} />
-            </button>
+            <button>
+             <div className="w-[150px] h-[150px] ml-[210px] border-solid  border-[2px] border-[#000000] rounded-lg" >
+               <input type="file" accept=".jpg" required className="hidden"  id="file"/>
+               <label htmlFor="file" className=" content-center pb-[100px]"><CgProfile className="pt-[20px] pl-[20px]" size={icon} /></label>
+             </div>
+             </button>
             <div className={styles.name}>
               <input
                 value={profile.name}

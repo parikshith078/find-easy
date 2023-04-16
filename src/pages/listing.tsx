@@ -2,37 +2,46 @@ import ListingForm from "@/components/ListingForm/ListingForm";
 import Header from "@/components/Header";
 import Fotter from "@/components/Fotter";
 import { styles as tailwindCss } from "@/tailwindStyles";
-import Prop_card from "@/components/accrd1/Prop_card";
-import {BiCurrentLocation} from 'react-icons/bi'
+import Test from "@/components/accrd1/Listingcomponentest";
+// import Maps from "@/components/map/Maps";
+import { useState } from "react";
 
-const redis = () => {
-  const accordionItems = [{
-    title:'YOUR PROPERTY',
-    content:(
-      <div className="mt-4">
-        <h2 className="flex"> <BiCurrentLocation className="mt-1 mr-2"/>Property Address : </h2>
-        <input type="text" required className="w-[100%] ml-2 border-b-[2px] border-[#7E7878]" />
+const ListingPage = () => {
+  function addProfile(profile) {
+    console.log(profile);
+  }
+  function addRentprop(rentprop) {
+    console.log(rentprop);
+  }
 
-         <h2 className="mt-8">Front view of Property : </h2>
-         <div className="flex"> 
-           <input type="text" placeholder="Description" className="w-[100%] ml-2 mt-4 border-b-[2px] mr-0 border-[#7E7878] flex " />
-           <input type="file" accept=".jpg" className="ml-0 mt-2"/>
-         </div>
-      </div>
-    )
-  }];
+  const [addLoc, setAddLoc] = useState(false);
+
   return (
     <div>
-       <Header />
-         <div className="absolute top-24">
-           <div className={`${tailwindCss.paddingX} w-screen h-screen`}>
-              <ListingForm />
-              <Prop_card items={accordionItems}/>
-           </div>
-       <Fotter />
-         </div>
+      <Header />
+      <div className="absolute top-24">
+        <div className={`${tailwindCss.paddingX} w-screen h-screen`}>
+          <button
+            className="btn btn-primary ml-4"
+            onClick={() => {
+              setAddLoc((prev) => !prev);
+            }}
+          >
+            add location
+          </button>
+          <div className="float-right">
+            <ListingForm onAdd={addProfile} />
+          </div>
+          <div className=" float-left w-[50%]">
+            <Test onAdd={addRentprop} />
+          </div>
+        </div>
+
+        {addLoc && <div className="ml-20 mt-[20opx]">{/* <Maps /> */}</div>}
+        <Fotter />
+      </div>
     </div>
   );
 };
 
-export default redis;
+export default ListingPage;

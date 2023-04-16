@@ -1,35 +1,20 @@
-// import React,{useState} from "react";
-// import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-
-// const HeartButton = () =>{
-
-//     return(
-//         <div>
-//          <AiFillHeart
-//          size={20}/>
-//         </div>
-//     );
-// };
-
-
-// export default HeartButton;
-
-'use client';
+"use client";
 
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { useAuth } from "../context/AuthContext";
+
+
 
 
 interface HeartButtonprops {
-    listingid:string;
+  listingid: string;
 }
-const HeartButton: React.FC<HeartButtonprops> = ({
-    listingid
-}) => {
-     const hasFavorited = false;
-     const toggleFavorite = () => {}
+const HeartButton: React.FC<HeartButtonprops> = ({ listingid }) => {
+  const hasFavorited = false;
+  const toggleFavorite = () => {};
 
   return (
-    <div 
+    <div
       onClick={toggleFavorite}
       className="
         relative
@@ -44,14 +29,14 @@ const HeartButton: React.FC<HeartButtonprops> = ({
           absolute
           fill-white"
       />
-      <AiFillHeart
-        size={20}
-        className={
-          hasFavorited ? 'fill-rose-500' : 'fill-neutral-500/70'
-        }
-      />
+      { 
+        <AiFillHeart
+          size={20}
+          className={hasFavorited ? "fill-rose-500" : "fill-neutral-500/70"}
+        />
+      }
     </div>
-   );
-    };
- 
+  );
+};
+
 export default HeartButton;

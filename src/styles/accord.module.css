@@ -1,13 +1,12 @@
 .accordion{
   margin-left: 10px;
-
-  padding: 10px;
-  width: 700px;
+  width: 670px;
   height: 700px;
+  margin-top: 20px;
 }
 
 .accord_item{
- width: 700px;
+ width: 650px;
 }
 
 .accord_item_btn {
