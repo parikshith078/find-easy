@@ -1,0 +1,126 @@
+// import { google as googleapi } from 'googleapis';
+
+// const { google } = require('googleapis');
+// const path = require('path');
+// const fs = require('fs');
+
+// const CLIENT_ID = '133665066758-sm0kqisc299dm23pj8jmcl904ieh3s5v.apps.googleusercontent.com';
+// const CLIENT_SECRET = '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';
+// const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
+
+// const REFRESH_TOKEN = '1//04Qjw5ukJIM9UCgYIARAAGAQSNwF-L9IrBbrqy4niNcpjUtSOpd7NfwePFM4Slm3DG_dId6Ag5CCc2-G4mJapjY1LI9KUZ_N4G58';
+
+// const oauth2Client = new google.auth.OAuth2(
+//   CLIENT_ID,
+//   CLIENT_SECRET,
+//   REDIRECT_URI
+// );
+
+// oauth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+
+// const drive = google.drive({
+//   version: 'v3',
+//   auth: oauth2Client,
+// });
+
+// /* 
+// filepath which needs to be uploaded
+// Note: Assumes example.jpg file is in root directory, 
+// though this can be any filePath
+// */
+// const filePath = path.join(__dirname, 'home.jpg');
+
+// async function uploadFile() {
+//   try {
+//     const response = await drive.files.create({
+//       requestBody: {
+//         name: 'home.jpg', //This can be name of your choice
+//         mimeType: 'image/jpg',
+//       },
+//       media: {
+//         mimeType: 'image/jpg',
+//         body: fs.createReadStream(filePath),
+//       },
+//     });
+
+//     console.log(response.data);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
+
+// uploadFile();
+
+// // async function deleteFile() {
+// //   try {
+// //     const response = await drive.files.delete({
+// //       fileId: 'YOUR FILE ID',
+// //     });
+// //     console.log(response.data, response.status);
+// //   } catch (error) {
+// //     console.log(error.message);
+// //   }
+// // }
+
+// // // deleteFile();
+
+// // async function generatePublicUrl() {
+// //   try {
+// //     const fileId = 'YOUR FILE ID';
+// //     await drive.permissions.create({
+// //       fileId: fileId,
+// //       requestBody: {
+// //         role: 'reader',
+// //         type: 'anyone',
+// //       },
+// //     });
+
+// //     /* 
+// //     webViewLink: View the file in browser
+// //     webContentLink: Direct download link 
+// //     */
+// //     const result = await drive.files.get({
+// //       fileId: fileId,
+// //       fields: 'webViewLink, webContentLink',
+// //     });
+// //     console.log(result.data);
+// //   } catch (error) {
+// //     console.log(error.message);
+// //   }
+// // }
+
+// // // generatePublicUrl();
+import { google } from 'googleapis';
+import * as fs from 'fs';
+
+const CLIENT_ID = '133665066758-sm0kqisc299dm23pj8jmcl904ieh3s5v.apps.googleusercontent.com';
+const API_KEY = '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';
+const SCOPES = ['https://www.googleapis.com/auth/drive.file'];
+
+const auth = new google.auth.GoogleAuth({
+  credentials: {
+    client_id: CLIENT_ID,
+    api_key: API_KEY,
+  },
+  scopes: SCOPES,
+});
+
+const drive = google.drive({
+  version: 'v3',
+  auth: auth,
+});
+
+const fileMetadata = {
+  name: 'my_file.jpg',
+};
+
+const media = {
+  mimeType: 'text/plain',
+  body: fs.createReadStream('/Users/jeev/Desktop/find-easy/src/home.jpg'),
+};
+
+const res = drive.files.create({
+  resource: fileMetadata,
+  media: media,
+  fields: 'id',
+});
