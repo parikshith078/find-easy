@@ -146,8 +146,8 @@
 //     });
 // }
 
-// const accountSid = 'AC9bafb65aff4eecfd5eca2a761ed78982';
-// const authToken = 'f10b4667727c0d31f19a453993c2d9ac';
+// const accountSid = '';
+// const authToken = '';
 // const client = require('twilio')(accountSid, authToken);
 
 // client.messages
@@ -165,7 +165,7 @@ import twilio from 'twilio';
 const app = express();
 
 const accountSid: string = 'AC9bafb65aff4eecfd5eca2a761ed78982';
-const authToken: string = 'f10b4667727c0d31f19a453993c2d9ac';
+const authToken: string = '';
 
 // app.set('view engine', 'ejs')
 
