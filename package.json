@@ -16,16 +16,26 @@
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "classname": "^0.0.0",
     "daisyui": "^2.51.5",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.2",
     "firebase": "^9.8.3",
+    "google-maps-react-18-support": "^2.1.0",
+    "googleapis": "^118.0.0",
+    "idx": "^2.5.6",
     "next": "13.1.2",
+    "npm": "^9.6.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "react-select": "^5.7.2",
     "redis-om": "^0.3.6",
+<<<<<<< HEAD
     "twilio": "^4.9.0",
+=======
+    "swiper": "^9.1.1",
+>>>>>>> main
     "typescript": "4.9.4"
   },
   "devDependencies": {
