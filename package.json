@@ -31,11 +31,8 @@
     "react-icons": "^4.8.0",
     "react-select": "^5.7.2",
     "redis-om": "^0.3.6",
-<<<<<<< HEAD
     "twilio": "^4.9.0",
-=======
     "swiper": "^9.1.1",
->>>>>>> main
     "typescript": "4.9.4"
   },
   "devDependencies": {
