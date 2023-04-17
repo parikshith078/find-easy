@@ -2,17 +2,30 @@ import Fotter from "@/components/Fotter";
 import Header from "@/components/Header";
 import { styles as tailwindCss } from "@/tailwindStyles";
 import { FaSearch } from "react-icons/fa";
-// import Map from "@/components/map/Maps";
+import properties from "@/components/card/data";
 import styles from "@/styles/catalouge.module.css";
 import Card from "@/components/card/Card";
-// import { BiChevronDown } from "react-icons/bi";
 import React from "react";
 import Select from "react-select";
 
 const iconSize = 20;
 const icon = 30;
 
+
 const catalouge = () => {
+  const datacomponent = properties.map((data)=>{
+    return(
+      <Card id={data.id} 
+      img={data.img}
+      description={data.description}
+      place={data.place}
+      rating={data.rating}
+      price={data.price}
+      speaciality={data.speaciality}
+      />
+
+    )
+  })
   return (
     <div>
       <Header />
@@ -31,7 +44,7 @@ const catalouge = () => {
             </div>
             <Select
               className="w-[9%]  border-[#7E7878] rounded-lg ml-2"
-              placeholder="Forsale"
+              placeholder="Forsale" 
             />
             <Select
               className="w-[9%]  border-[#7E7878] rounded-lg ml-2"
@@ -50,14 +63,7 @@ const catalouge = () => {
           {/* <Map /> */}
 
           <div className={styles.card_container}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {datacomponent}
           </div>
         </div>
         <Fotter />
