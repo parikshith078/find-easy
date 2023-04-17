@@ -7,15 +7,16 @@ import styles from "@/styles/catalouge.module.css";
 import Card from "@/components/card/Card";
 import React from "react";
 import Select from "react-select";
+import Maps from "@/components/map/Maps";
 
 const iconSize = 20;
 const icon = 30;
 
 
 const catalouge = () => {
-  const datacomponent = properties.map((data)=>{
+  const datacomponent = properties.map((data, id)=>{
     return(
-      <Card id={data.id} 
+      <Card id={data.id} key={id}
       img={data.img}
       description={data.description}
       place={data.place}
@@ -60,7 +61,7 @@ const catalouge = () => {
             />
           </div>
 
-          {/* <Map /> */}
+          <Maps />
 
           <div className={styles.card_container}>
             {datacomponent}
