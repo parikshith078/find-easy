@@ -7,6 +7,7 @@ export default async function handler(
 ) {
   const { prompt } = req.query;
   const response = await getResponse(prompt as string);
+  // const response = process.env.OPEN_AI_API_KEY;
 
   res.status(200).json({ name: response });
 }
