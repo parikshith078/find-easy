@@ -110,7 +110,7 @@ const Product: FC = () => {
                 </li>
               </ul>
 
-              <h2 className="text-2xl font-italic font-normal">₹ 1.4cr </h2>
+              <h2 className="text-2xl font-italic font-normal">₹ 1.4 cr </h2>
               <h2 className="text-1xl font-italic font-light">
                 3 Bedroom | 2000 sq feet{" "}
               </h2>
@@ -172,7 +172,7 @@ const Product: FC = () => {
                   <label htmlFor="my-modal-4" className="modal cursor-pointer">
                     <label className="modal-box relative" htmlFor="">
                       <h3 className="text-lg font-bold">
-                        Your Message has sent. Thanks Have a Nice day.
+                        Your Message has sent. We will get back to you.
                       </h3>
                     </label>
                   </label>
