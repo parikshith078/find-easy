@@ -22,7 +22,7 @@ const Nav: FC = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 self-center ml-10 max-w-[93%] mt-6 ">
+    <div className="navbar bg-base-100 self-center ml-10  mt-6 ">
       <div className="flex-1 pb-2 ">
         <Link href="/" className="btn btn-ghost normal-case pb-2 text-2xl">
           <Image alt="logo" src={logo} width={67} height={60} />

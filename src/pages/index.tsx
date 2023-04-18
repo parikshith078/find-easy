@@ -92,7 +92,7 @@ export default function Home() {
                 </div>
                 <HeroCard backgroundImage={heroCardImg} />
               </div>
-              <div className="flex lg:flex-row xs:flex-col justify-between my-16 gap-5 ">
+              <div className="flex lg:flex-row xs:flex-col max-w-7xl mx-auto justify-between my-16 gap-10 ">
                 {SERVICES_INFO.map((service, id) => (
                   <ServiceCard {...service} key={id} />
                 ))}
