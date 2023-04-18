@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: neue-haas-unica, sans-serif;
+  font-weight: 400;
+  color: #e4ebfa;
+  background-color: #111;
+}
+
+.mono {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+button:active,
+a:active {
+  transform: translateY(1px);
+}
+
+/*
+ * This fixes an intermittent bug we were seeing with the header send icon blocking the button click.
+ * I don't quite understand what the bug is so I'm applying this globally in case it happens elsewhere too.
+ */
+ svg {
+  pointer-events: none;
+}

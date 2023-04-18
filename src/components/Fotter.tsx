@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaLinkedin, FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
 import { styles } from "@/tailwindStyles";
 
@@ -22,7 +23,7 @@ const Fotter = () => {
           />
           <ul className="flex gap-6 font-light text-sm">
             <li>
-              <a href="#">About</a>
+              <Link href="/about">About</Link>
             </li>
             <li>
               <a href="#">Legal</a>
