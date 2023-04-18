@@ -5,6 +5,7 @@ import { styles as tailwindCss } from "@/tailwindStyles";
 import Test from "@/components/accrd1/Listingcomponentest";
 // import Maps from "@/components/map/Maps";
 import { useState } from "react";
+import Maps from "@/components/map/Maps";
 
 const ListingPage = () => {
   function addProfile(profile) {
@@ -32,12 +33,12 @@ const ListingPage = () => {
           <div className="float-right">
             <ListingForm onAdd={addProfile} />
           </div>
-          <div className=" float-left w-[50%]">
-            <Test onAdd={addRentprop} />
+          <div className=" float-left mt-4 w-[50%]">
+            <Test  onAdd={addRentprop} />
           </div>
         </div>
 
-        {addLoc && <div className="ml-20 mt-[20opx]">{/* <Maps /> */}</div>}
+        {addLoc && <div className="ml-20"> <Maps /> </div>}
         <Fotter />
       </div>
     </div>

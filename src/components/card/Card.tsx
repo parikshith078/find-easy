@@ -3,9 +3,6 @@ import HeartButton from "./HeartButton";
 import { AiFillStar } from "react-icons/ai";
 import Image from "next/image";
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import card from "./cardt";
-import { url } from "inspector";
 const iconsize = 20;
 const Card = (props) => {
 
@@ -32,6 +29,7 @@ const Card = (props) => {
         </div>
       </div>
       <p className={styles.details}>{props.description} </p>
+      <p className={styles.details}>{props.place} </p>
       <p className={styles.details}>{props.speaciality}</p>
       <p className={styles.price}>{props.price} </p>
     </div>

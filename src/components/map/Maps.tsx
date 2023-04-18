@@ -1,6 +1,6 @@
 import styles from "@/styles/catalouge.module.css"
 import React, { useState, useEffect, useRef } from "react";
-import { Map , GoogleApiWrapper, IMapProps, Marker } from "google-maps-react-18-support";
+import { Map , GoogleApiWrapper, Marker } from "google-maps-react-18-support";
 
 interface MapContainerProps  {
   google: any;
@@ -77,15 +77,15 @@ const MapContainer: React.FC<MapContainerProps> = (props) => {
         <Marker position={markerPosition} />
       </Map>
       </div>
-      <div>
-      <button onClick={handleCurrentLocationClick}>Current Location</button>
-      <button onClick={handleSubmit}>Submit</button>
+      <div className="flex">
+         <button onClick={handleCurrentLocationClick} className="btn btn-primary ml-4">Current Location</button>
+         <button onClick={handleSubmit} className="btn btn-primary ml-4">Submit</button>
       </div>
     </div>
   );
 };
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyAnJzTn9qzxW-Y9jV2YRuJhLWfksXxpX4E",
+  apiKey:process.env.API_KEY,
 })(MapContainer);
 
