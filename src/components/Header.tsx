@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { FaUserTie } from "react-icons/fa";
-import { CgMenu, CgCloseR } from "react-icons/cg";
+// import { FaUserTie } from "react-icons/fa";
+// import { CgMenu, CgCloseR } from "react-icons/cg";
 import { FC, useState } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import Link from "next/link";
 import { useAuth } from "@/components/context/AuthContext";
+// TODO: Fix issues in landing page
 const Header = () => {
   return (
     <div className="">
@@ -25,7 +26,7 @@ const Nav: FC = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 px-12">
+    <div className="navbar bg-base-100 px-12 max-w-[90%]">
       <div className="flex-1 pb-2 ">
         <Link href="/" className="btn btn-ghost normal-case pb-2 text-2xl">
           <Image alt="logo" src={logo} width={67} height={60} />
