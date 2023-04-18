@@ -164,8 +164,8 @@ import twilio from 'twilio';
 
 const app = express();
 
-const accountSid: string = 'AC9bafb65aff4eecfd5eca2a761ed78982';
-const authToken: string = '';
+const accountSid: string = 'process.env.ACCOUNT_SID';
+const authToken: string = 'process.env.AUTH_TOKEN';
 
 // app.set('view engine', 'ejs')
 
