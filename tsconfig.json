@@ -5,6 +5,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -19,6 +20,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/map/Maps.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "public/map/Maps.tsx"],
   "exclude": ["node_modules"]
 }

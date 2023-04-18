@@ -4,8 +4,8 @@ const { domains } = require('googleapis/build/src/apis/domains')
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["picsum.photos"],
+    domains: ["images.unsplash.com", "github.com", "findeasy.tech","picsum.photos"],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

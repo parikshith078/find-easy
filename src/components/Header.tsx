@@ -1,22 +1,19 @@
 import Image from "next/image";
-import { FaUserTie } from "react-icons/fa";
-import { CgMenu, CgCloseR } from "react-icons/cg";
+// import { FaUserTie } from "react-icons/fa";
+// import { CgMenu, CgCloseR } from "react-icons/cg";
 import { FC, useState } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import Link from "next/link";
 import { useAuth } from "@/components/context/AuthContext";
+// TODO: Fix issues in landing page
 const Header = () => {
-  return (
-    <div className="">
-      <Nav />
-    </div>
-  );
+  return <Nav />;
 };
 export default Header;
 
 const Nav: FC = () => {
   const { currentUser, logout } = useAuth();
-  // TODO: add contact button to scroll to contact section
+  // DONE: add contact button to scroll to contact section
 
   const logo = "/assets/logo.png";
 
@@ -25,7 +22,7 @@ const Nav: FC = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 px-12">
+    <div className="navbar bg-base-100 self-center ml-10  mt-6 ">
       <div className="flex-1 pb-2 ">
         <Link href="/" className="btn btn-ghost normal-case pb-2 text-2xl">
           <Image alt="logo" src={logo} width={67} height={60} />
@@ -34,6 +31,9 @@ const Nav: FC = () => {
       <ul className="menu menu-horizontal px-1 font-medium mx-2 ">
         <li>
           <Link href="#footer">Contact</Link>
+        </li>
+        <li>
+          <Link href="/about">About</Link>
         </li>
       </ul>
       <div className="flex-none gap-2">
