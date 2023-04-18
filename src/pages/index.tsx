@@ -7,6 +7,7 @@ import { MdLocationPin } from "react-icons/md";
 import Image from "next/image";
 import { styles } from "@/tailwindStyles";
 import { FC } from "react";
+import Link from "next/link";
 
 const SERVICES_INFO: service[] = [
   {
@@ -35,7 +36,7 @@ interface herocard {
 
 const HeroCard: FC<herocard> = ({ backgroundImage }) => {
   const cardImg = {
-    backgroundImage: `url(${process.env.PUBLIC_URL}${backgroundImage})`,
+    backgroundImage: "url(/assets/house.jpg)",
   };
   return (
     <div
@@ -73,9 +74,9 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        <div className="absolute top-24">
+        <div className="absolute top-40">
           <div className={` ${styles.paddingX}   w-full flex justify-center `}>
-            <div className={`lg:w-[1280px]  `}>
+            <div className={`  `}>
               <div className="hero-section flex gap-20 lg:flex-row sm:flex-col xs:flex-col  ">
                 <div className="left-col xs:w-full lg:w-[40%] flex flex-col gap-8 ">
                   <h1 className=" text-[52px] playfair leading-snug">
@@ -125,10 +126,13 @@ const ServiceCard = ({ discription, src, serviceName }: service) => {
 
 const SeeListingBtn = () => {
   return (
-    <div className="flex items-center gap-3 hover:gap-5 transition-all delay-150 ease-in cursor-pointer">
+    <Link
+      href="/catalouge"
+      className="flex items-center gap-3 hover:gap-5 transition-all delay-150 ease-in cursor-pointer"
+    >
       <div className=" text-[18px] hover:underline">See listing</div>
       <HiOutlineArrowNarrowRight size="24" />
-    </div>
+    </Link>
   );
 };
 
