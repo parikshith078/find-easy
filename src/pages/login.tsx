@@ -48,6 +48,7 @@ function LoginPage() {
                 <span className="label-text">Email</span>
               </label>
               <input
+                id="email"
                 ref={emailRef}
                 required
                 type="text"
@@ -60,6 +61,7 @@ function LoginPage() {
                 <span className="label-text">Password</span>
               </label>
               <input
+                id="password"
                 ref={passwordRef}
                 required
                 type="password"
