@@ -1,0 +1,50 @@
+.profile{
+    width: 600px;
+    height: 700px;
+    background-color: #ffffff8e;
+    float: right;
+    border: solid;
+    border-radius: 15px;
+}
+
+.headline{
+  margin-top: 30px;
+  margin-left: 5%;
+}
+
+.profile_pic{
+ border-radius: 40px;
+ border: solid;
+ background-color: antiquewhite;
+ margin-left: 210px;
+}
+
+.name{
+    margin-left: 37%;
+    display: flex;
+    margin-top: 10px;
+    cursor: default;
+}
+
+.property_upload{
+ /* width: 680px;
+ height: 700px;
+ margin-top: 20px;
+ border-radius: 15px;
+ border: solid; */
+ width: 700px;
+ height: 700px;
+ float: left;
+ margin-top: 20px;
+}
+
+.prop{
+  margin-left: 10px;
+  font-size: large;
+  overflow-x: auto;
+  overflow-y: scroll;
+}
+.pic{
+  display: none;
+  visibility: none;
+}
