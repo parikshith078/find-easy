@@ -6,6 +6,7 @@ import Test from "@/components/accrd1/Listingcomponentest";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 // import Maps from "@/components/map/Maps";
 import { useState } from "react";
+import Maps from "@/components/map/Maps";
 import { useAuth } from "@/components/context/AuthContext";
 import { ref, uploadBytes } from "firebase/storage";
 
@@ -71,7 +72,12 @@ const ListingPage = () => {
           </div>
         </div>
 
-        {addLoc && <div className="ml-20 mt-[20opx]">{/* <Maps /> */}</div>}
+        {addLoc && (
+          <div className="ml-20">
+            {" "}
+            <Maps />{" "}
+          </div>
+        )}
         <Fotter />
       </div>
     </div>
