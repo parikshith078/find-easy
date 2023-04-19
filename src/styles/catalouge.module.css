@@ -1,9 +1,8 @@
 .maps{
     position: absolute;
     width: 620px;
-    height: 590px;
+    height: 650px;
     top: 60px;
-    box-shadow: 4px 4px rgb(199, 199, 199);
 
 
 }
@@ -14,8 +13,8 @@
     overflow-x: auto;
     overflow-y: scroll;
     width:680px;
-    height:600px;
-    margin-top: 16px;
+    height:660px;
+    margin-top: 60px;
     
 }
 
@@ -89,7 +88,7 @@
 .details{
   height: 10px;
   margin: 8px;
-  color: grey;
+  color: rgb(97, 97, 97);
 }
 
 .price{
