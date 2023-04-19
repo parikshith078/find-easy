@@ -17,17 +17,20 @@ const SERVICES_INFO: service[] = [
       "Maximise your return. sell your property with confidence with us.",
     serviceName: "Sell Property",
     src: "/assets/sell.svg",
+    link: "/sell",
   },
   {
     discription:
       "Find your dream home, secure your financial future with property ownership with us. ",
     serviceName: "Buy Property",
     src: "/assets/buy.svg",
+    link: "/catalouge",
   },
   {
     discription: "Reach your target audience with ease Advertise with us.",
     serviceName: "Advertise",
     src: "/assets/advertise.svg",
+    link: "/pricing",
   },
 ];
 const heroCardImg = "/assets/house.jpg";
@@ -111,7 +114,7 @@ export default function Home() {
   );
 }
 
-const ServiceCard = ({ discription, src, serviceName }: service) => {
+const ServiceCard = ({ discription, src, serviceName, link }: service) => {
   return (
     <div className=" flex flex-col justify-between scale-100 hover:scale-105 transition-transform delay-200  h-[500px] items-center w-full shadow py-11 px-9 ">
       <Image
@@ -122,9 +125,12 @@ const ServiceCard = ({ discription, src, serviceName }: service) => {
         height={225}
       />
       <p>{discription}</p>
-      <div className=" flex w-[50%] justify-center items-center text-[16px] rounded-md scale-100 hover:bg-primary hover:scale-105 transition-all font-bold px-6 py-[14px] border-solid border-[1px] border-[#C5C5C5] ">
+      <Link
+        href={link}
+        className=" flex w-[50%] justify-center items-center text-[16px] rounded-md scale-100 hover:bg-primary hover:scale-105 transition-all font-bold px-6 py-[14px] border-solid border-[1px] border-[#C5C5C5] "
+      >
         <p>{serviceName}</p>
-      </div>
+      </Link>
     </div>
   );
 };
@@ -145,4 +151,5 @@ type service = {
   src: string;
   discription: string;
   serviceName: string;
+  link: string;
 };

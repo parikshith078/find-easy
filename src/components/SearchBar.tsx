@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 
 const SearchBar = () => {
@@ -11,9 +12,12 @@ const SearchBar = () => {
         type="text"
         placeholder="Enter City, Area or Pincode"
       />
-      <div className="  w-12 aspect-square flex justify-center items-center bg-primary rounded-sm hover:bg-secondary transition-all delay-100 ">
+      <Link
+        href="/catalouge"
+        className="  w-12 aspect-square flex justify-center items-center bg-primary rounded-sm hover:bg-secondary transition-all delay-100 "
+      >
         <FaSearch size={iconSize} />
-      </div>
+      </Link>
     </div>
   );
 };
