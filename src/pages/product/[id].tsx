@@ -182,7 +182,7 @@ function ProductPage() {
                     >
                       <label className="modal-box relative" htmlFor="">
                         <h3 className="text-lg font-bold">
-                          Your Message has sent. Thanks Have a Nice day.
+                          Your Message has sent. We will get back to you.
                         </h3>
                       </label>
                     </label>
