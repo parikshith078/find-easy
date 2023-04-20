@@ -1,31 +1,31 @@
 export const TeamInfo: TeamMemberProps[] = [
   {
-    name: "Parikshith Palegar",
+    name: "PARIKSHITH PALEGAR T",
     role: "Team Lead",
     image: "https://github.com/parikshith078.png",
     github: "https://github.com/parikshith078/",
     tags: ["UI Desiger", "React Developer"],
   },
   {
-    name: "Parikshith Palegar",
-    role: "Team Lead",
+    name: "JEEVAN KUMAR R",
+    role: "Business analyst",
     image: "https://github.com/jeevan-v8.png",
     github: "https://github.com/parikshith078/",
     tags: ["Team Lead", "Frontend"],
   },
   {
-    name: "Parikshith Palegar",
-    role: "Team Lead",
+    name: "AVINAV KASHYAP",
+    role: "Quality analyst",
     image: "https://github.com/Avinav-kashyap.png",
     github: "https://github.com/parikshith078/",
-    tags: ["Team Lead", "Frontend"],
+    tags: ["Team Lead", "Testing"],
   },
   {
-    name: "Parikshith Palegar",
-    role: "Team Lead",
+    name: "SHASHANK G",
+    role: "Research analyst",
     image: "https://github.com/shashank-g2100.png",
     github: "https://github.com/parikshith078/",
-    tags: ["Team Lead", "Frontend"],
+    tags: ["Team Lead", "Resarch"],
   },
 ];
 
