@@ -20,8 +20,7 @@ function Card(props: CardProps) {
       </figure>
       <div className="card-body">
         <h2 className="card-title">
-          {/* TODO: Add ruppe symble here */}
-          {props.price}
+          ₹ {props.price}
           <div className="badge badge-secondary">NEW</div>
         </h2>
         <p>{props.address}</p>

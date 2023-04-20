@@ -47,7 +47,9 @@ const Nav: FC = () => {
           >
             {currentUser && (
               <li>
-                <a className="justify-between">Profile</a>
+                <Link href="/profile" className="justify-between">
+                  Profile
+                </Link>
               </li>
             )}
             {currentUser ? (

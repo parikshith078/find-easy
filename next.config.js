@@ -6,9 +6,11 @@ const nextConfig = {
   images: {
     domains: [
       "images.unsplash.com",
+      "unsplash.com",
       "github.com",
       "findeasy.tech",
       "picsum.photos",
+      "source.unsplash.com",
       "firebasestorage.googleapis.com",
     ],
   },

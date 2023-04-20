@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+//TODO: Add images
 import Fotter from "../components/Fotter";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +17,7 @@ const plans = [
     ],
     buttonText: "Get Started",
     buttonLink: "/signUp",
+    img: "pricing/price1.svg",
   },
   {
     title: "Pro",
@@ -30,6 +32,7 @@ const plans = [
     ],
     buttonText: "Get Started",
     buttonLink: "/signUp",
+    img: "pricing/price2.svg",
   },
   {
     title: "Enterprise",
@@ -46,6 +49,7 @@ const plans = [
     ],
     buttonText: "Request Demo",
     buttonLink: "/contact",
+    img: "pricing/price3.svg",
   },
 ];
 // TODO: Add image to the card
@@ -82,13 +86,8 @@ function AdvertisePage() {
 const PricingCard = ({ plan }) => (
   <div className="card w-full md:w-80 bg-base-100 shadow-xl">
     <div className="avatar self-center mt-6 mx-auto">
-      <div className="w-24 bg-primary mask mask-squircle">
-        <Image
-          height={50}
-          width={50}
-          alt="profile"
-          src="/images/plan-icon.png"
-        />
+      <div className="w-24 bg-white mask mask-squircle">
+        <Image height={50} width={50} alt="profile" src={plan.img} />
       </div>
     </div>
     <div className="card-body text-center items-center ">

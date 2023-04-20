@@ -3,6 +3,9 @@ import Footer from "../components/Fotter";
 import Image from "next/image";
 import Link from "next/link";
 
+// TODO: add Img
+// TODO: Edit styles
+
 function SellPropertyPage() {
   return (
     <>
@@ -25,12 +28,10 @@ function SellPropertyPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <Image
-              src="/images/sell-property.jpg"
+              src="/assets/sell.svg"
               alt="Sell Property"
               width="640"
               height="480"
-              objectFit="cover"
-              className="rounded-lg"
             />
           </div>
           <div>
@@ -50,9 +51,9 @@ function SellPropertyPage() {
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Sell Your Property?
           </h2>
-          <a href="/contact" className="btn btn-secondary btn-lg mx-auto">
+          <Link href="/about" className="btn btn-secondary btn-lg mx-auto">
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
       <Footer />

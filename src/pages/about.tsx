@@ -1,5 +1,5 @@
-import Header from "../components/Header";
 import { TeamInfo } from "@/libs/info";
+// TODO: Fix content of the page
 import Fotter from "../components/Fotter";
 import Image from "next/image";
 import Link from "next/link";
