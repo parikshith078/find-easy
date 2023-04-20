@@ -18,7 +18,7 @@ function SellPropertyPage() {
               We make it easy to sell your property. Our team of experts are
               here to guide you through the process every step of the way.
             </p>
-            <Link href="/signUP" className="btn btn-primary">
+            <Link href="/listing" className="btn btn-primary">
               Getting Started
             </Link>
           </div>
