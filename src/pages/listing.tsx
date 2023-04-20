@@ -11,9 +11,13 @@ import { useState } from "react";
 import Maps from "@/components/map/Maps";
 import { useAuth } from "@/components/context/AuthContext";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { useRouter } from "next/router";
 
 const ListingPage = () => {
   const { currentUser, db, storage } = useAuth();
+  const { push } = useRouter();
+
+  if (!currentUser) push("/login");
 
   async function addProfile(profile: any) {
     try {

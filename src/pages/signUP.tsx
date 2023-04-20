@@ -38,6 +38,7 @@ function SignUpPage() {
     push("/login");
     setLoading(false);
   };
+  if (currentUser) push("/");
   return (
     <>
       <div className="hero min-h-[90vh]  px-12 bg-base-200">

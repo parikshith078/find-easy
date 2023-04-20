@@ -27,6 +27,7 @@ function LoginPage() {
       console.log("error");
     }
   };
+  if (currentUser) push("/");
   return (
     <div className="hero min-h-[90vh]  px-12 bg-base-200">
       {/* error != "" && notify() */}
