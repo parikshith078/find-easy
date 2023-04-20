@@ -10,14 +10,17 @@ import Select from "react-select";
 import Maps from "@/components/map/Maps";
 import { useAuth } from "@/components/context/AuthContext";
 import { collection, onSnapshot } from "firebase/firestore";
+import { useRouter } from "next/router";
 
 const iconSize = 20;
 // const icon = 30;
 
 const CalatoguePage = () => {
-  const { db } = useAuth();
+  const { db, currentUser } = useAuth();
 
   const [propertyData, setPropertyData] = useState<any>();
+
+  const { push } = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +57,9 @@ const CalatoguePage = () => {
         />
       );
     });
+
+  if (!currentUser) push("/login");
+
   return (
     <div>
       <Header />

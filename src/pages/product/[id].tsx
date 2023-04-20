@@ -4,14 +4,7 @@ import Fotter from "@/components/Fotter";
 import Image from "next/image";
 import Head from "next/head";
 import { FC, useEffect } from "react";
-import {
-  collection,
-  query,
-  where,
-  onSnapshot,
-  orderBy,
-  limit,
-} from "firebase/firestore";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { useAuth } from "@/components/context/AuthContext";
 import { useState } from "react";
 

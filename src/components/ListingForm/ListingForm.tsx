@@ -1,6 +1,8 @@
 import styles from "@/styles/list.module.css";
 import { CgProfile } from "react-icons/cg";
-import { useState, ChangeEvent, FormEvent, MouseEventHandler } from "react";
+import { useState, MouseEventHandler } from "react";
+// import { useAuth } from "@/components/context/AuthContext";
+// import { collection, onSnapshot, where, query } from "firebase/firestore";
 
 const icon = 130;
 const editicon = 20;
@@ -13,6 +15,26 @@ const ListingForm = (props: any) => {
     address: string;
     about: string;
   }
+
+  // const { db, currentUser } = useAuth();
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     // TODO: Add a time order
+  //     const ref = query(
+  //       collection(db, "Users"),
+  //       where("userId", "==", currentUser?.uid)
+  //     );
+  //     await onSnapshot(ref, (querySnapshot) => {
+  //       const temp = [];
+  //       querySnapshot.forEach((doc) => {
+  //         temp.push({ ...doc.data() });
+  //       });
+  //       console.log(temp);
+  //     });
+  //   };
+  //   fetchData();
+  // }, []);
 
   const [isDisabled, setIsDisabled] = useState(false);
 
