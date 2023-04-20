@@ -10,6 +10,7 @@ function Rentprop(props: any) {
     pincode: string;
     price: string;
     frontview: string;
+    rooms: number;
     photo: any;
   }
   const [rentprop, setRentprop] = useState<Rentprop>({
@@ -17,6 +18,7 @@ function Rentprop(props: any) {
     pincode: "",
     price: "",
     frontview: "",
+    rooms: 0,
     photo: "",
   });
 
@@ -86,6 +88,19 @@ function Rentprop(props: any) {
           name="price"
           onChange={handelchange}
         />
+        <h2 className="flex bg-base-100 mt-8">
+          {" "}
+          <BiCurrentLocation className="mt-1 mr-2" />
+          Rooms :{" "}
+        </h2>
+        <input
+          type="number"
+          value={rentprop.rooms}
+          required
+          className="w-[100%] ml-2 border-b-[2px] border-[#7E7878] bg-base-100"
+          name="rooms"
+          onChange={handelchange}
+        />
 
         {/* //property view  */}
         <h2 className=" flex mt-8 bg-base-100">
@@ -120,6 +135,7 @@ function Rentprop(props: any) {
                 price: "",
                 frontview: "",
                 photo: "",
+                rooms: 0,
               });
               setUploadImg(null);
             }}
