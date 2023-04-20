@@ -86,7 +86,7 @@ const MapContainer: React.FC<MapContainerProps> = (props) => {
         </Map>
       </div>
       <div className="flex">
-        <button
+        {/* <button
           onClick={handleCurrentLocationClick}
           className="btn btn-primary ml-4"
         >
@@ -94,7 +94,7 @@ const MapContainer: React.FC<MapContainerProps> = (props) => {
         </button>
         <button onClick={handleSubmit} className="btn btn-primary ml-4">
           Submit
-        </button>
+        </button> */}
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Header from "@/components/Header";
 import Fotter from "@/components/Fotter";
 import Image from "next/image";
+import Head from "next/head";
 import { FC, useEffect } from "react";
 import {
   collection,
@@ -45,6 +46,7 @@ export default function FormPage({ params }: any) {
     console.log("working out");
     getData();
   }, []);
+
   return (
     <>
       {/* @ts-ignore */}
@@ -54,16 +56,26 @@ export default function FormPage({ params }: any) {
 }
 
 const Product: FC = (props) => {
+  const [serviceChat, setServiceChat] = useState<any>(false);
   return (
     <>
       <Header />
-      <div className=" w-screen h-screen">
+      {serviceChat && (
+        <Head>
+          <script
+            src="https://code.tidio.co/n60txso6wa94gg9qyro4x3eo2cohlojo.js"
+            async
+          ></script>
+        </Head>
+      )}
+      <div className=" w-screen h-[60%]">
         <div className="hero min-h-screen bg-base-200  ">
-          <div className="hero-content gap-10 flex-col lg:flex-row">
+          <div className="hero-content gap-10 flex-col items-center relative bottom-24 justify-start w-full h-full lg:flex-row">
             <Image
-              src="/assets/house.jpg"
+              // @ts-ignore
+              src={props.img}
               alt="Picture of the house"
-              className="max-w-sm rounded-lg shadow-2xl "
+              className=" max-w-4xl min-w-[500px] rounded-lg shadow-2xl "
               height={700}
               width={600}
             />
@@ -77,7 +89,12 @@ const Product: FC = (props) => {
               <h1 className="text-2xl font-bold mt-10">About the Property</h1>
               {/* @ts-ignore */}
               <p className="pb-6 pt-2">{props.frontview}</p>
-              <button className="btn btn-primary">Contact Seller</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => setServiceChat((perv) => !perv)}
+              >
+                Contact Seller
+              </button>
             </div>
           </div>
         </div>

@@ -46,7 +46,7 @@ const CalatoguePage = () => {
           // id={data.id}
           docRef={data.img}
           key={id}
-          img={"/assets/Liv.jpg"}
+          img={data.img}
           // description={data.description}
           address={data.address}
           price={data.price}
