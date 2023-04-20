@@ -48,7 +48,6 @@ const ListingPage = () => {
   async function sendData(input: any, img: any) {
     try {
       await uploadImage(currentUser.uid, img).then(async () => {
-        console.log("image uploaded");
         const imgRef = ref(storage, `propertyImages/${currentUser.uid}`);
         listAll(imgRef).then((res) => {
           getDownloadURL(res.items[0]).then(async (url) => {

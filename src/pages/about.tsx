@@ -6,8 +6,8 @@ import Link from "next/link";
 function AboutPage() {
   return (
     <>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content text-center">
+      <div className="hero min-h-screen w-screen bg-base-200">
+        <div className="hero-content text-center w-screen">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Find Easy</h1>
             <p className="py-6">
@@ -20,7 +20,7 @@ function AboutPage() {
           </div>
         </div>
       </div>
-      <div className="hero min-h-screen bg-base-200 items-start ">
+      <div className="hero min-h-screen bg-base-200 items-start w-screen ">
         <h2 className="text-3xl font-bold">Meat our team</h2>
         <div className="w-[70%] flex my-20 flex-wrap px-10 gap-10 justify-around">
           {TeamInfo.map((item, id) => (

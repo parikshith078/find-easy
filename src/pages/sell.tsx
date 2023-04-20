@@ -10,7 +10,7 @@ function SellPropertyPage() {
   return (
     <>
       <Header />
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-base-200  w-screen">
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Sell Your Property</h1>
@@ -24,7 +24,7 @@ function SellPropertyPage() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto my-16">
+      <div className="container mx-auto my-16  w-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <Image

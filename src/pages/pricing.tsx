@@ -58,7 +58,7 @@ function AdvertisePage() {
   return (
     <>
       <Header />
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-base-200  w-screen ">
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Choose Your Advertise Plan</h1>
@@ -71,7 +71,7 @@ function AdvertisePage() {
           </div>
         </div>
       </div>
-      <div className="hero min-h-screen bg-base-200 items-start ">
+      <div className="hero min-h-screen bg-base-200 items-start  w-screen">
         <div className="w-[70%] flex my-20 flex-wrap gap-10 justify-around">
           {plans.map((plan, index) => (
             <PricingCard key={index} plan={plan} />

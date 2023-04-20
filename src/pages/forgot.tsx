@@ -19,7 +19,7 @@ function FogetPage() {
     }
   };
   return (
-    <div className="hero min-h-[90vh]  px-12 bg-base-200">
+    <div className="hero min-h-screen  px-12 bg-base-200  w-screen">
       {/* error != "" && notify() */}
       <div className="hero-content flex-col lg:flex-row-reverse px-24 lg:gap-[2rem]">
         <div className="text-center lg:text-left">

@@ -2,10 +2,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
 import { styles } from "@/tailwindStyles";
+import { useState } from "react";
+import { useAuth } from "./context/AuthContext";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 const Fotter = () => {
   const logo = "/assets/logo.png";
   const iconSize = 20;
+  const [email, setEmail] = useState("");
+
+  const { db } = useAuth();
+
+  const handelClick = async () => {
+    await addDoc(collection(db, "emails"), {
+      email,
+      createdAt: serverTimestamp(),
+    })
+      .then(() => {
+        setEmail("");
+        alert("Thank you for subscribing");
+      })
+      .catch(() => {
+        alert("Login to join our newsletter");
+      });
+  };
 
   return (
     <div
@@ -50,10 +70,20 @@ const Fotter = () => {
               className="w-[70%] lg:w-[70%] border-solid rounded-sm p-3 border-[1px] border-[#C5C5C5] "
               type="text"
               id="fname"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               name="fname"
               placeholder="Email..."
             ></input>
-            <div className=" bg-primary rounded-sm flex-1 hover:bg-primary-active cursor-pointer flex justify-center items-center  ">
+            <div
+              onClick={async () => {
+                if (email.length > 0) {
+                  await handelClick();
+                  setEmail("");
+                }
+              }}
+              className=" bg-primary rounded-sm flex-1 hover:bg-primary-active cursor-pointer flex justify-center items-center  "
+            >
               <p>Subscribe</p>
             </div>
           </div>

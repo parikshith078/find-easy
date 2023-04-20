@@ -14,6 +14,8 @@ const ListingForm = (props: any) => {
     about: string;
   }
 
+  const [isDisabled, setIsDisabled] = useState(false);
+
   const [profile, setProfile] = useState<Profile>({
     name: "",
     contact: "",
@@ -35,13 +37,24 @@ const ListingForm = (props: any) => {
 
   const submitProfile: MouseEventHandler<HTMLButtonElement> = (event) => {
     props.onAdd(profile);
-    setProfile({
-      name: "",
-      contact: "",
-      email: "",
-      address: "",
-      about: "",
-    });
+    if (
+      profile.name === "" ||
+      profile.contact === "" ||
+      profile.email === "" ||
+      profile.address === "" ||
+      profile.about === ""
+    ) {
+      alert("Please fill all the details");
+      return;
+    }
+    // setProfile({
+    //   name: "",
+    //   contact: "",
+    //   email: "",
+    //   address: "",
+    //   about: "",
+    // });
+    setIsDisabled(true);
     event.preventDefault();
   };
 
@@ -54,6 +67,7 @@ const ListingForm = (props: any) => {
         <button>
           <div className="w-[150px] h-[150px] ml-[210px] border-solid  border-[2px] border-[#000000] rounded-lg">
             <input
+              disabled={isDisabled}
               type="file"
               accept=".jpg"
               required
@@ -67,6 +81,7 @@ const ListingForm = (props: any) => {
         </button>
         <div className={styles.name}>
           <input
+            disabled={isDisabled}
             value={profile.name}
             name="name"
             onChange={handleChange}
@@ -77,6 +92,7 @@ const ListingForm = (props: any) => {
         <form className=" ml-10 mt-8 border-solid cursor-default">
           <p className="">Contact-number :</p>
           <input
+            disabled={isDisabled}
             value={profile.contact}
             name="contact"
             onChange={handleChange}
@@ -86,6 +102,7 @@ const ListingForm = (props: any) => {
         <div className=" ml-10 mt-8 border-solid cursor-default">
           <p>E-Mail :</p>
           <input
+            disabled={isDisabled}
             value={profile.email}
             name="email"
             onChange={handleChange}
@@ -96,6 +113,7 @@ const ListingForm = (props: any) => {
         <div className=" ml-10 mt-8 border-solid cursor-default">
           <p>Address : </p>
           <input
+            disabled={isDisabled}
             value={profile.address}
             name="address"
             onChange={handleChange}
@@ -108,6 +126,7 @@ const ListingForm = (props: any) => {
             <input
               className="h-full w-[100%] border-[2px] px-2 border-[#7E7878] rounded-lg"
               value={profile.about}
+              disabled={isDisabled}
               name="about"
               onChange={handleChange}
               placeholder="Description about you...."
