@@ -5,30 +5,55 @@ import { FaSearch } from "react-icons/fa";
 import properties from "@/components/card/data";
 import styles from "@/styles/catalouge.module.css";
 import Card from "@/components/card/Card";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import Maps from "@/components/map/Maps";
-
-
+import { useAuth } from "@/components/context/AuthContext";
+import { collection, onSnapshot } from "firebase/firestore";
 
 const iconSize = 20;
-const icon = 30;
+// const icon = 30;
 
+const CalatoguePage = () => {
+  const { db } = useAuth();
 
-const catalouge = () => {
-  const datacomponent = properties.map((data, id)=>{
-    return(
-      <Card id={data.id} key={id}
-      img={data.img}
-      description={data.description}
-      place={data.place}
-      rating={data.rating}
-      price={data.price}
-      speaciality={data.speaciality}
-      />
+  const [propertyData, setPropertyData] = useState<any>();
 
-    )
-  })
+  useEffect(() => {
+    const fetchData = async () => {
+      // TODO: Add a time order
+      const ref = await collection(db, "Properties");
+      onSnapshot(ref, (querySnapshot) => {
+        const temp = [];
+        querySnapshot.forEach((doc) => {
+          temp.push({ ...doc.data() });
+        });
+        setPropertyData(temp);
+        console.log("working");
+
+        console.log(propertyData);
+      });
+    };
+    fetchData();
+  }, []);
+
+  const datacomponent =
+    propertyData !== undefined &&
+    propertyData.map((data, id) => {
+      return (
+        <Card
+          link={data.userID}
+          // id={data.id}
+          docRef={data.img}
+          key={id}
+          img={"/assets/Liv.jpg"}
+          // description={data.description}
+          address={data.address}
+          price={data.price}
+          // speaciality={data.speaciality}
+        />
+      );
+    });
   return (
     <div>
       <Header />
@@ -47,7 +72,7 @@ const catalouge = () => {
             </div>
             <Select
               className="w-[9%]  border-[#7E7878] rounded-lg ml-2"
-              placeholder="Forsale" 
+              placeholder="Forsale"
             />
             <Select
               className="w-[9%]  border-[#7E7878] rounded-lg ml-2"
@@ -66,7 +91,7 @@ const catalouge = () => {
           <Maps />
 
           <div className={styles.card_container}>
-            {datacomponent}
+            {propertyData !== undefined && datacomponent}
           </div>
         </div>
         <Fotter />
@@ -75,7 +100,7 @@ const catalouge = () => {
   );
 };
 
-export default catalouge;
+export default CalatoguePage;
 
 {
   /* <div className=" flex cursor-pointer items-center w-[8%] h-10 ml-2 border-[1px] px-3  border-[#7E7878] rounded-lg">

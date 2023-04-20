@@ -5,7 +5,7 @@ import {
   UserInfo,
 } from "firebase/auth";
 import React, { useContext, useEffect } from "react";
-import { auth } from "@/libs/auth/firebase";
+import { auth, db, storage } from "@/libs/auth/firebase";
 import { useRouter } from "next/router";
 import {
   createUserWithEmailAndPassword,
@@ -21,6 +21,8 @@ interface AuthContextProps {
   resetPassword: (email: string) => Promise<any>;
   logout: any;
   singInWithGoogle: any;
+  db: any;
+  storage: any;
 }
 
 const AuthContext = React.createContext<AuthContextProps>(null!);
@@ -86,6 +88,8 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     resetPassword,
     logout,
     singInWithGoogle,
+    db,
+    storage,
   };
 
   return (

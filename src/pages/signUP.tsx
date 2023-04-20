@@ -99,7 +99,7 @@ function SignUpPage() {
                   onClick={(e) => handleSubmit(e)}
                   className="btn btn-primary  mb-0 mt-0"
                 >
-                  Sing Up
+                  Sign Up
                 </button>
               </div>
             </form>
@@ -115,7 +115,7 @@ function SignUpPage() {
               className="btn btn-primary mb-4 mx-8"
             >
               <FcGoogle size="28" />
-              <span className="px-2">SingUp with google</span>
+              <span className="px-2">SignUp with google</span>
             </button>
           </div>
         </div>

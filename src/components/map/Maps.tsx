@@ -1,14 +1,18 @@
-import styles from "@/styles/catalouge.module.css"
+import styles from "@/styles/catalouge.module.css";
 import React, { useState, useEffect, useRef } from "react";
-import { Map , GoogleApiWrapper, Marker } from "google-maps-react-18-support";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react-18-support";
+import { GeoPoint } from "firebase/firestore";
 
-interface MapContainerProps  {
+interface MapContainerProps {
   google: any;
 }
 
 const MapContainer: React.FC<MapContainerProps> = (props) => {
   const { google } = props;
-  const [markerPosition, setMarkerPosition] = useState<{ lat: number, lng: number }>({ lat: 0, lng: 0 });
+  const [markerPosition, setMarkerPosition] = useState<{
+    lat: number;
+    lng: number;
+  }>({ lat: 0, lng: 0 });
   const mapRef = useRef<any>(null);
 
   useEffect(() => {
@@ -36,7 +40,7 @@ const MapContainer: React.FC<MapContainerProps> = (props) => {
     const lat = clickEvent.latLng.lat();
     const lng = clickEvent.latLng.lng();
     setMarkerPosition({ lat, lng });
-  }
+  };
 
   const handleCurrentLocationClick = () => {
     // Get the user's current position again
@@ -57,35 +61,45 @@ const MapContainer: React.FC<MapContainerProps> = (props) => {
         console.error(error);
       }
     );
-  }
+  };
 
   const handleSubmit = () => {
-    console.log(`Latitude: ${markerPosition.lat}, Longitude: ${markerPosition.lng}`);
-  }
+    const location = new GeoPoint(markerPosition.lat, markerPosition.lng);
+    console.log(
+      `Latitude: ${markerPosition.lat}, Longitude: ${markerPosition.lng}`
+    );
+    return location;
+  };
 
   return (
     <div className={styles.maps}>
       <div className={styles.maps}>
         {/* @ts-ignore */}
-      <Map
-        google={google}
-        zoom={8}
-        initialCenter={markerPosition}
-        onClick={handleMapClick}
-        ref={mapRef}
-      >
-        <Marker position={markerPosition} />
-      </Map>
+        <Map
+          google={google}
+          zoom={8}
+          initialCenter={markerPosition}
+          onClick={handleMapClick}
+          ref={mapRef}
+        >
+          <Marker position={markerPosition} />
+        </Map>
       </div>
       <div className="flex">
-         <button onClick={handleCurrentLocationClick} className="btn btn-primary ml-4">Current Location</button>
-         <button onClick={handleSubmit} className="btn btn-primary ml-4">Submit</button>
+        <button
+          onClick={handleCurrentLocationClick}
+          className="btn btn-primary ml-4"
+        >
+          Current Location
+        </button>
+        <button onClick={handleSubmit} className="btn btn-primary ml-4">
+          Submit
+        </button>
       </div>
     </div>
   );
 };
 
 export default GoogleApiWrapper({
-  apiKey:process.env.API_KEY,
+  apiKey: process.env.API_KEY,
 })(MapContainer);
-

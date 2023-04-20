@@ -1,13 +1,14 @@
 import ChatRoom from "./ChatRoom";
+import Image from "next/image";
 const FloatBtn = () => {
   return (
     <>
       {/* The button to open modal */}
       <label
         htmlFor="my-modal-6"
-        className="btn fixed bottom-10 z-50 right-10 "
+        className="fixed bottom-10 right-10 z-50 rounded-full bg-white hover:bg-blue-100 text-white py-3 px-4 flex items-center justify-center shadow-lg transition duration-300 transform hover:-translate-y-1 hover:scale-110"
       >
-        Chat
+        <Image src="/chat-bot.png" width={70} height={70} alt="Chat icon" />
       </label>
 
       {/* Put this part before </body> tag */}
